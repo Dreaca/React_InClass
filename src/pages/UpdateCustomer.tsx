@@ -1,13 +1,13 @@
 import {useNavigate} from "react-router";
-import {useContext, useState} from "react";
-import {CustomerContext} from "../store/CustomerProvider";
+import {useState} from "react";
 import {Modal} from "../components/Modal";
 import {Customer} from "../models/Customer";
+import {useDispatch} from "react-redux";
 
 export function UpdateCustomer() {
 
     const navigate = useNavigate();
-    const [customers, dispatch] = useContext(CustomerContext);
+    const dispatch = useDispatch();
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");

@@ -1,10 +1,9 @@
-import {useContext} from "react";
 import {Customer} from "../models/Customer";
-import {CustomerContext} from "../store/CustomerProvider";
+import {useSelector} from "react-redux";
 
 export function Dashboard() {
 
-    const [customers, dispatch] = useContext(CustomerContext);
+    const customers :Customer[] = useSelector(state => state)
     return (
         <>
             Dashboard

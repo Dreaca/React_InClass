@@ -1,7 +1,7 @@
 import {Customer} from "../models/Customer";
 
 export const initialState : Customer[] = [];
-export function CustomerReducer(state:Customer [], action:{type:string, payload:Customer}){
+export function CustomerReducer(state:Customer [] = initialState, action:{type:string, payload:Customer}){
     switch(action.type){
         case 'ADD_CUSTOMER':
             return [...state, action.payload];
@@ -13,6 +13,7 @@ export function CustomerReducer(state:Customer [], action:{type:string, payload:
                 );
                 case 'DELETE_CUSTOMER':
                     return state.slice(0,-1);
-
+                    default:
+                        return state;
     }
 }
